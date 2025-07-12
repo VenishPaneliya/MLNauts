@@ -1,0 +1,67 @@
+{
+  "name": "DeliveryTracking",
+  "type": "object",
+  "properties": {
+    "swap_request_id": {
+      "type": "string",
+      "description": "Associated swap request ID"
+    },
+    "tracking_number": {
+      "type": "string",
+      "description": "Shipping tracking number"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "ordered",
+        "picked_up",
+        "in_transit",
+        "out_for_delivery",
+        "delivered"
+      ],
+      "default": "ordered",
+      "description": "Delivery status"
+    },
+    "estimated_delivery": {
+      "type": "string",
+      "format": "date",
+      "description": "Estimated delivery date"
+    },
+    "carrier": {
+      "type": "string",
+      "enum": [
+        "ups",
+        "fedex",
+        "dhl",
+        "usps"
+      ],
+      "description": "Shipping carrier"
+    },
+    "timeline": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "location": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      },
+      "description": "Delivery timeline events"
+    }
+  },
+  "required": [
+    "swap_request_id",
+    "status"
+  ]
+}
