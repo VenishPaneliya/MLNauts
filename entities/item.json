@@ -1,0 +1,151 @@
+{
+  "name": "Item",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Item name/title"
+    },
+    "brand": {
+      "type": "string",
+      "enum": [
+        "Gucci",
+        "Nike",
+        "Adidas",
+        "Zara",
+        "H&M",
+        "Uniqlo",
+        "Levi's",
+        "Calvin Klein",
+        "Tommy Hilfiger",
+        "Prada",
+        "Louis Vuitton",
+        "Chanel",
+        "Dior",
+        "Versace",
+        "Balenciaga",
+        "Other"
+      ],
+      "description": "Brand name"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "men",
+        "women",
+        "accessories"
+      ],
+      "description": "Main category"
+    },
+    "subcategory": {
+      "type": "string",
+      "enum": [
+        "tops",
+        "bottoms",
+        "dresses",
+        "outerwear",
+        "shoes",
+        "bags",
+        "jewelry",
+        "watches",
+        "scarves",
+        "belts"
+      ],
+      "description": "Item subcategory"
+    },
+    "style": {
+      "type": "string",
+      "enum": [
+        "casual",
+        "formal",
+        "sporty",
+        "vintage",
+        "bohemian",
+        "minimalist",
+        "streetwear",
+        "luxury"
+      ],
+      "description": "Style category"
+    },
+    "size": {
+      "type": "string",
+      "enum": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "One Size"
+      ],
+      "description": "Size"
+    },
+    "condition": {
+      "type": "string",
+      "enum": [
+        "new",
+        "like_new",
+        "good",
+        "fair",
+        "poor"
+      ],
+      "description": "Item condition"
+    },
+    "description": {
+      "type": "string",
+      "description": "Item description"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Search tags"
+    },
+    "images": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Image URLs"
+    },
+    "rewards_value": {
+      "type": "number",
+      "description": "ReWards point value"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "available",
+        "pending_swap",
+        "swapped",
+        "removed"
+      ],
+      "default": "available",
+      "description": "Item availability status"
+    },
+    "views": {
+      "type": "number",
+      "default": 0,
+      "description": "Number of views"
+    },
+    "owner_id": {
+      "type": "string",
+      "description": "ID of item owner"
+    }
+  },
+  "required": [
+    "title",
+    "brand",
+    "category",
+    "condition",
+    "owner_id"
+  ]
+}
