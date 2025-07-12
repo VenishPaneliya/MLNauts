@@ -1,0 +1,60 @@
+{
+  "name": "SwapRequest",
+  "type": "object",
+  "properties": {
+    "requester_id": {
+      "type": "string",
+      "description": "ID of user making the request"
+    },
+    "owner_id": {
+      "type": "string",
+      "description": "ID of item owner"
+    },
+    "requested_item_id": {
+      "type": "string",
+      "description": "ID of requested item"
+    },
+    "offered_item_id": {
+      "type": "string",
+      "description": "ID of offered item (if swap), null if points"
+    },
+    "points_offered": {
+      "type": "number",
+      "description": "ReWards points offered (if points transaction)"
+    },
+    "message": {
+      "type": "string",
+      "description": "Message from requester"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "accepted",
+        "rejected",
+        "completed",
+        "cancelled"
+      ],
+      "default": "pending",
+      "description": "Request status"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "item_swap",
+        "points_redemption"
+      ],
+      "description": "Type of exchange"
+    },
+    "delivery_tracking_id": {
+      "type": "string",
+      "description": "ID for delivery tracking (if accepted)"
+    }
+  },
+  "required": [
+    "requester_id",
+    "owner_id",
+    "requested_item_id",
+    "type"
+  ]
+}
